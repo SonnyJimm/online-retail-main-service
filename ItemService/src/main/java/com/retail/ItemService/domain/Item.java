@@ -20,7 +20,6 @@ public class Item {
     private double price;
     private String image;
     private int barcode;
-    private int quantity;
     @OneToMany
     @JoinColumn(name = "itemID")
     @OrderColumn(name = "sequence")
@@ -29,13 +28,12 @@ public class Item {
     public Item() {
     }
 
-    public Item(String name, String description, double price, String image, int barcode, int quantity) {
+    public Item(String name, String description, double price, String image, int barcode) {
         this.name = name;
         this.description = description;
         this.price = price;
         this.image = image;
         this.barcode = barcode;
-        this.quantity = quantity;
         this.reviews = new ArrayList<>();
     }
 
@@ -77,14 +75,6 @@ public class Item {
 
     public void setBarcode(int barcode) {
         this.barcode = barcode;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
     }
 
     public List<Review> getReviews() {

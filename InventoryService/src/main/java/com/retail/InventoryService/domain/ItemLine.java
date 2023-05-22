@@ -13,7 +13,5 @@ public class ItemLine {
     private int quantity;
     private int itemID;
     @ManyToOne
-    @JoinTable
     private Discount discount;
-
 }

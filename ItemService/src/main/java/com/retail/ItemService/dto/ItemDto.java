@@ -14,6 +14,5 @@ public class ItemDto {
     private double price;
     private String image;
     private int barcode;
-    private int quantity;
     private List<Review> reviews;
 }

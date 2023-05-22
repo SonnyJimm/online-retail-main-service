@@ -6,7 +6,6 @@ public class CreateItemForm {
     private double price;
     private String image;
     private int barcode;
-    private int quantity;
 
     public String getName() {
         return name;
@@ -46,13 +45,5 @@ public class CreateItemForm {
 
     public void setBarcode(int barcode) {
         this.barcode = barcode;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
     }
 }

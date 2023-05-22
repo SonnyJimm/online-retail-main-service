@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(name="orders")
 public class Order {
     @Id
     @GeneratedValue
@@ -14,8 +15,5 @@ public class Order {
     @OneToMany
     @JoinColumn(name = "orderID")
     private List<ItemLine> itemLines;
-    @OneToOne
-    @JoinColumn
-    private ShippingAddress shippingAddress;
     private int customerID;
 }

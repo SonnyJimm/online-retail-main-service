@@ -29,7 +29,7 @@ public class ItemServiceImpl implements ItemService {
     public Optional<ItemDto> createItem(CreateItemForm form) {
         Optional<ItemDto> optionalItem;
         try {
-            Item item = new Item(form.getName(), form.getDescription(), form.getPrice(), form.getImage(), form.getBarcode(), form.getQuantity());
+            Item item = new Item(form.getName(), form.getDescription(), form.getPrice(), form.getImage(), form.getBarcode());
             optionalItem = Optional.of(mapper.map(itemRepository.save(item), ItemDto.class));
         } catch (Exception e) {
             optionalItem = Optional.of(null);

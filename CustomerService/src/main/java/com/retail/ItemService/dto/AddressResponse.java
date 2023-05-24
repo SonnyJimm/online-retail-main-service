@@ -15,11 +15,5 @@ public class AddressResponse {
     private String city;
     private String state;
     private String zipCode;
-    private boolean isDefault;
-
-    private CustomerResponse customerResponse;
-
-    private AddressType addressType;
-
 
 }

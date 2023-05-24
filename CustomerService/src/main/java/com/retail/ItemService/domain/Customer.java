@@ -32,11 +32,11 @@ public class Customer {
     @JoinColumn(name = "customerID")
     private List<Address> shippingAddresses;
 
-    @OneToOne(cascade = CascadeType.PERSIST)
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "defaultShippingAddressID")
     private Address defaultShippingAddress;
 
-    @OneToMany(cascade = CascadeType.PERSIST)
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "customerID")
     private List<CreditCard> creditCards;
 

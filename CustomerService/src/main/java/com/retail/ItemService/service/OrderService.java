@@ -36,6 +36,7 @@ public class OrderService {
             order = new Order();
             order.setState(OrderState.NEW);
             order.setCustomer(customer);
+            order.setShippingAddress(customer.getDefaultShippingAddress());
         }
         for (ItemLineForm lineForm : form.getItems()) {
             Optional<ItemLine> existingLine = order.getLineItems().stream().filter(item -> item.getId() == lineForm.getItemID()).findFirst();
@@ -50,6 +51,9 @@ public class OrderService {
         return mapper.map(orderRepository.save(order), OrderResponse.class);
     }
 
+    public List<OrderResponse> getAllOrderByCustomerID(int customerID) {
+        return orderRepository.findAllOrderByCustomer(customerID).stream().map(order -> mapper.map(order, OrderResponse.class)).toList();
+    }
 //    public void order(){
 //        Order order;
 //        Optional<Order> orderOptional = findOrderByState();

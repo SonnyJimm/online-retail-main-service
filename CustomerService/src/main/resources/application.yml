@@ -1,4 +1,8 @@
   spring:
+    security:
+      user:
+        name: user
+        password: pass
     datasource:
       url: jdbc:hsqldb:hsql://localhost:9003/trainingdb
       username: SA
@@ -12,4 +16,4 @@
         hibernate:
           format_sql: true
   server:
-    port: 8000
+    port: 9000

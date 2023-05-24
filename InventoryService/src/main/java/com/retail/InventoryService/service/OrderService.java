@@ -1,5 +1,10 @@
 package com.retail.InventoryService.service;
 
-public interface OrderService {
+import com.retail.InventoryService.dto.OrderDto;
+import com.retail.InventoryService.form.CreateOrderForm;
 
+import java.util.Optional;
+
+public interface OrderService {
+    Optional<OrderDto> createOrder(CreateOrderForm orderForm);
 }

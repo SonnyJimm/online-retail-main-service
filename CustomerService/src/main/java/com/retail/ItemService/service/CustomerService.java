@@ -41,11 +41,16 @@ public class CustomerService {
     }
 
     public CustomerResponse findCustomerById(int id) {
+        Customer customer = findCustomerId(id);
+        return mapper.map(customer, CustomerResponse.class);
+    }
+
+    public Customer findCustomerId(int id) {
         Optional<Customer> customer = customerRepository.findById(id);
         if (!customer.isPresent()) {
             throw new NotFoundException("Customer not found");
         }
-        return mapper.map(customer.get(), CustomerResponse.class);
+        return customer.get();
     }
 
     public void deleteCustomerByID(int id) {

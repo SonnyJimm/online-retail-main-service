@@ -40,6 +40,10 @@ public class Customer {
     @JoinColumn(name = "customerID")
     private List<CreditCard> creditCards;
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "customer")
+    List<Order> orderList = new ArrayList<>();
+
+
 //    @OneToMany(cascade = CascadeType.ALL, mappedBy = "buyer")
 //    List<Review> reviews = new ArrayList<>();
 //    @OneToMany(cascade = CascadeType.ALL, mappedBy = "customer")
@@ -79,8 +83,6 @@ public class Customer {
     //TODO - mesi
 
     // Sets the billing address and shipping addresses for the customer
-
-
 
 
 //    public List<Order> getOrders() {

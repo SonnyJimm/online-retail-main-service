@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
+//@AllArgsConstructor
 @NoArgsConstructor
 public class ItemLineResponse {
 
@@ -15,5 +15,6 @@ public class ItemLineResponse {
 
     private int quantity;
     private double discount;
+
 
 }

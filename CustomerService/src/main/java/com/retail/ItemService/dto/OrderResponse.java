@@ -1,6 +1,7 @@
 package com.retail.ItemService.dto;
 
 
+import com.retail.ItemService.domain.ItemLine;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,13 +16,12 @@ public class OrderResponse {
 
     private int id;
 
-    private CustomerResponse customer;
+//    private CustomerResponse customer;
 
     private AddressResponse shippingAddress;
 
 
-
-    private List<ItemLineResponse> lineItems = new ArrayList<>();
+    private List<ItemLine> lineItems = new ArrayList<>();
 
 
 }
